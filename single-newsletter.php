@@ -21,6 +21,12 @@ function tfs_custom_loop() { ?>
         <div class="tfs-detail__category-block"><?php echo $category_name; ?></div>
         <div class="tfs-detail__content-wrapper">
             <h2><?php  echo get_the_title(); ?> </h2>
+                        <?php 
+                if(get_field('twitter')){
+                    echo '<a class="tfs_twitter" href="https://twitter.com/'.get_field('twitter').'"><span class="dashicons dashicons-twitter"></span></a>';
+                }  
+            ?>
+
             <p><?php  echo get_the_content(); ?></p>
             <a class="tfs-detail__subscribe-button" href="<?php  echo get_field('subscribe'); ?>" class="button-subscribe w-button">Subscribe to this newsletter</a>
             <a class="tfs-detail__example-button" href="<?php  echo get_field('example'); ?>" class="w-button">See an example first</a>

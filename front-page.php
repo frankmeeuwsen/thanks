@@ -35,11 +35,24 @@ if ( is_active_sidebar( 'home-featured' ) || is_active_sidebar( 'home-top' ) || 
 
 	// Add home featured area.
 	add_action( 'genesis_after_header', 'agentpress_home_featured_widget' );
-	add_action( 'genesis_after_header', 'tfs_category_listing',1 );
+	add_action( 'genesis_after_header', 'tfs_category_listing',2 );
+	add_action( 'genesis_after_header', 'tfs_subheader',1 );
 	// Add home widget area.
 	add_action( 'genesis_before_footer', 'agentpress_home_widgets', 1 );
 
 }
+}
+
+function tfs_subheader(){?>
+	<div class="tfs_hero_section">
+		<div class="tfs_hero_wrapper">		
+			<div class="tfs_hero_heading">	Make your inbox happy again! ❤️
+			</div>
+			<div class="tfs_hero_subheading">Find the best newsletters for your taste. Never have a dull moment again!				
+			</div>
+		</div>
+	</div>
+<?php
 }
 
 function agentpress_body_class( $classes ) {
@@ -119,13 +132,13 @@ function tfs_homepage_loop() {
 			'posts_per_page' => 12,
 			'orderby'=> 'date',
 			'order' => 'ASC',
-			'paged' => get_query_var( 'page' )
+			'paged' => get_query_var( 'page' ),
 		);
 		global $wp_query;
 		$wp_query = new WP_Query( $args );
 
 			if ( have_posts() ) : 
-					echo '<h3>The best newsletters</h3>';
+					echo '<h3>Take a look at some of the latest newsletters in our directory</h3>';
 					echo '<div class="tfs-related-grid alignwide" role="list">';
 					// var_dump($all_newsletters);
 					//  die;
