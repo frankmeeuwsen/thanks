@@ -127,12 +127,14 @@ add_action( 'genesis_loop', 'tfs_homepage_loop' );
 
 // Custom loop for frontpage.
 function tfs_homepage_loop() {		
+
 		$args =  array(
 			'post_type' => 'newsletter',
 			'posts_per_page' => 12,
+			'post_status'=>'publish',
 			'orderby'=> 'date',
-			'order' => 'ASC',
-			'paged' => get_query_var( 'page' ),
+			'order' => 'DESC',
+			'paged' => get_query_var('page')
 		);
 		global $wp_query;
 		$wp_query = new WP_Query( $args );
@@ -149,7 +151,7 @@ function tfs_homepage_loop() {
 					<div class="tfs-related-grid__tile" role="list-item">
 							<a href="<?php the_permalink(); ?>" class="newsletter-wrapper">
 								<div class="tfs-related-grid__image">
-									<img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'tfs-header') ?: 'https://source.unsplash.com/random/300x200/?'.$category_name[0]->name.''; ?>" width="300" height="200" class="tfs-imageblock">
+									<img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'tfs-header') ?: 'https://source.unsplash.com/random/300x200/?'.$category_name.''; ?>" width="300" height="200" class="tfs-imageblock">
 								</div>
 								<div class="tfs-related-grid__avatar"><img src="<?php  echo get_field('logo'); ?>" width="32" height="32" class="tfs-related-grid__logo"></div>
 								<div class="tfs-related-grid__tile-content"><h4><a href="<?php echo get_permalink() ?>"><?php echo the_title() ?></a></h4>
@@ -159,7 +161,10 @@ function tfs_homepage_loop() {
 					</div>
 			<?php
 				endwhile; 
-				genesis_posts_nav();
+				// genesis_posts_nav();
+				// next_posts_link() usage with max_num_pages.
+    next_posts_link( __( 'Older Entries', 'textdomain' ), $the_query->max_num_pages );
+    previous_posts_link( __( 'Newer Entries', 'textdomain' ) );
 			endif;
 				wp_reset_query();
 		}

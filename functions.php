@@ -216,4 +216,3 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Disclaimer', 'agentpress' ),
 	'description' => __( 'This is the disclaimer section of the footer.', 'agentpress' ),
 ) );
-

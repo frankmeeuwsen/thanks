@@ -15,7 +15,7 @@ function tfs_custom_loop() { ?>
             $category_links = wp_list_pluck($terms, 'name'); 
             $category_name = implode(" / ", $category_links);?>
         <div class="tfs-detail__image-wrapper">
-            <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://source.unsplash.com/random/600x400/?'.$category_name[0]->name.''; ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
+            <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://source.unsplash.com/random/600x400/?'.$category_name.''; ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
         </div>
         <div class="tfs-detail__avatar"><img src="<?php  echo get_field('logo'); ?>" width="32" height="32" class="tfs-detail__logo"></div>
         <div class="tfs-detail__category-block"><?php echo $category_name; ?></div>
