@@ -133,7 +133,7 @@ function tfs_homepage_loop() {
 			'posts_per_page' => 12,
 			'post_status'=>'publish',
 			'orderby'=> 'date',
-			'order' => 'DESC',
+			'order' => 'ASC',
 			'paged' => get_query_var('page')
 		);
 		global $wp_query;
@@ -161,10 +161,7 @@ function tfs_homepage_loop() {
 					</div>
 			<?php
 				endwhile; 
-				// genesis_posts_nav();
-				// next_posts_link() usage with max_num_pages.
-    next_posts_link( __( 'Older Entries', 'textdomain' ), $the_query->max_num_pages );
-    previous_posts_link( __( 'Newer Entries', 'textdomain' ) );
+				genesis_posts_nav();
 			endif;
 				wp_reset_query();
 		}
