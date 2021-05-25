@@ -2976,3 +2976,7 @@ letter-spacing: 2px;
 .tfs_twitter:hover{
 	color: #05619b;
 }
+
+.pagination-next {
+	display:none;
+}
