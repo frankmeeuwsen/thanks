@@ -2753,7 +2753,7 @@ padding-left: 35px;
 	-webkit-flex-flow: row wrap;
 	flex-flow: row wrap;
 	-webkit-justify-content: space-around;
-	justify-content: space-around;
+	justify-content: center;
 
 
 }

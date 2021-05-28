@@ -310,7 +310,7 @@ html {
 
 /* Chrome fix */
 body > div {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 body {
@@ -318,7 +318,7 @@ body {
   color: #1a212b;
   background-color: #f5f5f5;
   font-family: "Lato", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.625;
 }
@@ -414,27 +414,27 @@ h6 {
 }
 
 h1 {
-  font-size: 3.6rem;
-}
-
-h2 {
   font-size: 3rem;
 }
 
-h3 {
+h2 {
   font-size: 2.4rem;
 }
 
-h4 {
+h3 {
   font-size: 2rem;
 }
 
-h5 {
+h4 {
   font-size: 1.8rem;
 }
 
-h6 {
+h5 {
   font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.4rem;
 }
 
 /* Objects
@@ -561,7 +561,7 @@ button {
   border: 0;
   color: #fff;
   background-color: #d23836;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 300;
   white-space: normal;
   text-decoration: uppercase;
@@ -581,7 +581,7 @@ input[type=button] {
   border: 0;
   color: #fff;
   background-color: #d23836;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   white-space: normal;
   text-decoration: none;
@@ -601,7 +601,7 @@ input[type=reset] {
   border: 0;
   color: #fff;
   background-color: #d23836;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   white-space: normal;
   text-decoration: none;
@@ -621,7 +621,7 @@ input[type=submit] {
   border: 0;
   color: #fff;
   background-color: #d23836;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   white-space: normal;
   text-decoration: none;
@@ -642,7 +642,7 @@ input[type=submit].small {
   border: 0;
   color: #fff;
   background-color: #d23836;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   white-space: normal;
   text-decoration: none;
@@ -1356,7 +1356,7 @@ img.alignright,
 }
 
 .site-title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   margin-bottom: 0;
   font-size: 3.4rem;
   line-height: 1.2;
@@ -1509,11 +1509,6 @@ img.alignright,
 .genesis-nav-menu .sub-menu .sub-menu {
   margin: -54px 0 0 204px;
 }
-.genesis-nav-menu .nav-submit:hover {
-  background-color: #fff;
-  color: #1a212b;
-  border-radius: 10px;
-}
 .genesis-nav-menu > .first > a {
   padding-left: 0;
 }
@@ -1568,24 +1563,6 @@ img.alignright,
 }
 .site-header .genesis-nav-menu a:hover {
   color: #1a212b;
-}
-
-.nav-submit {
-  display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: #DB0C0C;
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s;
-  font-family: "Open Sans", sans-serif;
-  color: #262626;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: none;
 }
 
 /* Primary Navigation
@@ -2100,7 +2077,8 @@ p.entry-meta a {
   color: #fff;
 }
 
-li.pagination-next {
+li.pagination-next,
+li.pagination-previous {
   display: none;
 }
 
@@ -2652,10 +2630,6 @@ li.comment {
     display: none;
   }
 
-  .site-header .genesis-nav-menu li a:last-of-type {
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
   .home-bottom,
 .home-top {
     padding: 40px 0;
@@ -3031,7 +3005,7 @@ li.comment {
 .tfs-related-grid {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .tfs-detail__subscribe-button {
@@ -3187,12 +3161,12 @@ li.comment {
 }
 
 .category_button {
-  border-radius: 3px;
-  background-color: #49647b;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  background-color: #ddd;
   display: inline-block;
   padding: 9px 15px;
-  background-color: #3898ec;
-  color: #fff;
+  color: #000;
   border: 0;
   line-height: inherit;
   text-decoration: none;
@@ -3233,3 +3207,10 @@ li.comment {
 .tfs_twitter:hover {
   color: #05619b;
 }
+
+.pagination-center {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */

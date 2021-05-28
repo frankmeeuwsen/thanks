@@ -15,7 +15,7 @@ function tfs_custom_loop() { ?>
             $category_links = wp_list_pluck($terms, 'name'); 
             $category_name = implode(" / ", $category_links);?>
         <div class="tfs-detail__image-wrapper">
-            <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://source.unsplash.com/random/600x400/?'.$category_name.''; ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
+            <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://picsum.photos/600/400?nocache='.microtime(); ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
         </div>
         <div class="tfs-detail__avatar"><img src="<?php  echo get_field('logo'); ?>" width="32" height="32" class="tfs-detail__logo"></div>
         <div class="tfs-detail__category-block"><?php echo $category_name; ?></div>
@@ -56,19 +56,8 @@ if ($related_newsletters) {
         echo '<h3>Related '.$this_category[0]->name.' newsletters</h3>';
             echo '<div class="tfs-related-grid alignwide" role="list">';
 
-        while ($related_newsletters->have_posts()):$related_newsletters->the_post() ?>
-                    <div class="tfs-related-grid__tile" role="list-item">
-                    <a href="<?php the_permalink(); ?>" class="newsletter-wrapper">
-                        <div class="tfs-related-grid__image">
-                            <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'tfs-header') ?: 'https://source.unsplash.com/random/300x200/?'.$this_category[0]->name.''; ?>" width="300" height="200" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
-                        </div>
-                        <div class="tfs-related-grid__avatar"><img src="<?php  echo get_field('logo'); ?>" width="32" height="32" class="tfs-related-grid__logo"></div>
-                        <div class="tfs-related-grid__tile-content"><h4><a href="<?php echo get_permalink() ?>"><?php echo the_title() ?></a></h4>
-                        <div class="tfs-related__content"><?php  echo get_the_content(); ?></div>
-                    </a>             
-                    </div>
-            </div>
-        <?php    
+        while ($related_newsletters->have_posts()):$related_newsletters->the_post();
+        get_template_part('template/grid');
         endwhile;
     echo '</div>';
     }

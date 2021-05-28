@@ -142,26 +142,12 @@ function tfs_homepage_loop() {
 			if ( have_posts() ) : 
 					echo '<h3>Take a look at some of the latest newsletters in our directory</h3>';
 					echo '<div class="tfs-related-grid alignwide" role="list">';
-					// var_dump($all_newsletters);
-					//  die;
 				while ( have_posts() ) : the_post();
-					$terms = get_the_terms ($post->id, 'newsletter_categories');
-					$category_links = wp_list_pluck($terms, 'name'); 
-					$category_name = implode(" / ", $category_links);?>
-					<div class="tfs-related-grid__tile" role="list-item">
-							<a href="<?php the_permalink(); ?>" class="newsletter-wrapper">
-								<div class="tfs-related-grid__image">
-									<img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'tfs-header') ?: 'https://source.unsplash.com/random/300x200/?'.$category_name.''; ?>" width="300" height="200" class="tfs-imageblock">
-								</div>
-								<div class="tfs-related-grid__avatar"><img src="<?php  echo get_field('logo'); ?>" width="32" height="32" class="tfs-related-grid__logo"></div>
-								<div class="tfs-related-grid__tile-content"><h4><a href="<?php echo get_permalink() ?>"><?php echo the_title() ?></a></h4>
-								<div class="tfs-related__content"><?php  echo get_the_content(); ?></div>
-							</a>             
-							</div>
-					</div>
-			<?php
+				get_template_part('template/grid');
 				endwhile; 
+				echo '</div><div class="pagination-center">';
 				genesis_posts_nav();
+				echo '</div>';
 			endif;
 				wp_reset_query();
 		}

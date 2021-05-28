@@ -216,3 +216,25 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Disclaimer', 'agentpress' ),
 	'description' => __( 'This is the disclaimer section of the footer.', 'agentpress' ),
 ) );
+
+// add_filter( 'gform_post_data', 'replace_tags_with_custom_taxonomy', 10, 2 );
+function replace_tags_with_custom_taxonomy( $post_data, $form ) {
+   
+    //only change post type on form id 5
+    if ( $form['id'] != 1 ) {
+       return $post_data;
+    }
+   
+    //------------------------------------------------------------------------------------
+    // Replace my_taxonomy with your custom taxonomy name as defined in your register_taxonomy() function call
+    $custom_taxonomy = 'newsletter_categories';
+    //------------------------------------------------------------------------------------
+    // Getting tags
+    $tags = implode( ',', $post_data['tags_input'] );
+    // Array of taxonomy terms keyed by their taxonomy name.
+    $post_data['tax_input'] = array( $custom_taxonomy => $tags );
+    // Set default tags to empty.
+    $post_data['tags_input'] = null;
+    // Return modified post data with the custom taxonomy terms added.
+    return $post_data;
+}
