@@ -36,9 +36,11 @@ function tfs_custom_loop() { ?>
             <div class="tfs-button-wrapper">
             <a class="tfs-detail__subscribe-button button-subscribe w-button" href="<?php  echo get_field('subscribe'); ?>">Subscribe to this newsletter</a>
             <a class="tfs-detail__example-button w-button" href="<?php  echo get_field('example'); ?>">See an example first</a>
-            <a class="tfs-detail__frequency-button w-button" href="/frequency/<?php  echo $frequency_name; ?>"><?php  echo $frequency_name; ?></a>
-
-
+            <?php if($frequency_name)
+            { echo 
+            '<a class="tfs-detail__frequency-button w-button" href="/frequency/'.  $frequency_name.'">'.  $frequency_name .'</a>'
+            ;}?>
+            
             </div>
         </div>
 </div>

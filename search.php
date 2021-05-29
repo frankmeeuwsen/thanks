@@ -26,5 +26,14 @@ function genesis_do_search_title() {
 	echo apply_filters( 'genesis_search_title_output', $title ) . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
+remove_action('genesis_loop','genesis_do_loop');
+add_action( 'genesis_loop', 'tfs_image');
 
+function tfs_image(){
+			echo '<div class="tfs-related-grid alignwide" role="list">';
+        while ( have_posts() ) : the_post(); 
+			get_template_part( 'template/grid' );
+		endwhile; 
+			echo '</div>';
+}
 genesis();

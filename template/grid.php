@@ -20,5 +20,3 @@
         echo '<div class="tfs-related__content">'.get_the_content().'</div>';
         echo'</a>';
         echo'</div>';
-// '.get_the_post_thumbnail_url(get_the_id(),"tfs-header") ?: "https://picsum.photos/300/200?nocache=".microtime().'
-//  ?:"https://picsum.photos/300/200?nocache="'.microtime().'
