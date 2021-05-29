@@ -13,7 +13,12 @@ function tfs_custom_loop() { ?>
         <?php 
             $category_terms = get_the_terms ($post->id, 'newsletter_categories');
             $category_links = wp_list_pluck($category_terms, 'name'); 
-            $category_name = implode(" / ", $category_links);?>
+            $category_name = implode(" / ", $category_links);
+            $frequency_terms = get_the_terms ($post->id, 'frequency');
+            $frequency_links = wp_list_pluck($frequency_terms, 'name'); 
+            $frequency_name = implode(" / ", $frequency_links);
+            
+            ?>
         <div class="tfs-detail__image-wrapper">
             <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://picsum.photos/600/400?nocache='.microtime(); ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
         </div>
@@ -31,7 +36,9 @@ function tfs_custom_loop() { ?>
             <div class="tfs-button-wrapper">
             <a class="tfs-detail__subscribe-button button-subscribe w-button" href="<?php  echo get_field('subscribe'); ?>">Subscribe to this newsletter</a>
             <a class="tfs-detail__example-button w-button" href="<?php  echo get_field('example'); ?>">See an example first</a>
-            <a class="tfs-detail__frequency-button w-button" href="<?php  echo get_field('example'); ?>">Weekly</a>
+            <a class="tfs-detail__frequency-button w-button" href="/frequency/<?php  echo $frequency_name; ?>"><?php  echo $frequency_name; ?></a>
+
+
             </div>
         </div>
 </div>

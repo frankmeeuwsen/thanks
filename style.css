@@ -2630,6 +2630,7 @@ li.comment {
 .tfs-related-grid__logo,
 .tfs-detail__logo {
   border-radius: 32px;
+  background-color: #fff;
 }
 
 .tfs-related-grid__tile-content {
