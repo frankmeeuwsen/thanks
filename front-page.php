@@ -133,7 +133,7 @@ function tfs_homepage_loop() {
 			'posts_per_page' => 12,
 			'post_status'=>'publish',
 			'orderby'=> 'date',
-			'order' => 'ASC',
+			'order' => 'DESC',
 			'paged' => get_query_var('page')
 		);
 		global $wp_query;
