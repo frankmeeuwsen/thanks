@@ -2613,7 +2613,7 @@ li.comment {
   float: right;
   top: -16px;
   left: -16px;
-  z-index: 1000;
+  z-index: 9;
 }
 
 .tfs-related__content {
