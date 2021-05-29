@@ -140,7 +140,9 @@ function tfs_homepage_loop() {
 		$wp_query = new WP_Query( $args );
 
 			if ( have_posts() ) : 
-					echo '<h3>Take a look at some of the latest newsletters in our directory</h3>';
+			echo '<div class="tfs-related-grid__tile-header">
+                                <h3>Take a look at some of the latest newsletters in our directory</h3>
+                        </div>';
 					echo '<div class="tfs-related-grid alignwide" role="list">';
 				while ( have_posts() ) : the_post();
 				get_template_part('template/grid');

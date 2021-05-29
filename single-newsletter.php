@@ -11,15 +11,15 @@ function tfs_custom_loop() { ?>
     <?php if(have_posts()) :
         while(have_posts()) : the_post(); ?>
         <?php 
-            $terms = get_the_terms ($post->id, 'newsletter_categories');
-            $category_links = wp_list_pluck($terms, 'name'); 
+            $category_terms = get_the_terms ($post->id, 'newsletter_categories');
+            $category_links = wp_list_pluck($category_terms, 'name'); 
             $category_name = implode(" / ", $category_links);?>
         <div class="tfs-detail__image-wrapper">
             <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://picsum.photos/600/400?nocache='.microtime(); ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
         </div>
         <div class="tfs-detail__avatar"><img src="<?php  echo get_field('logo'); ?>" width="32" height="32" class="tfs-detail__logo"></div>
-        <div class="tfs-detail__category-block"><?php echo $category_name; ?></div>
         <div class="tfs-detail__content-wrapper">
+            <div class="tfs-detail__category-block"><?php echo $category_name; ?></div>
             <h2><?php  echo get_the_title(); ?> </h2>
                         <?php 
                 if(get_field('twitter')){
@@ -28,9 +28,11 @@ function tfs_custom_loop() { ?>
             ?>
 
             <p><?php  echo get_the_content(); ?></p>
-            <a class="tfs-detail__subscribe-button" href="<?php  echo get_field('subscribe'); ?>" class="button-subscribe w-button">Subscribe to this newsletter</a>
-            <a class="tfs-detail__example-button" href="<?php  echo get_field('example'); ?>" class="w-button">See an example first</a>
-            <span class="tfs-detail__frequency-button"><?php the_terms( get_the_id(), 'frequency', __( "" ), ", ","" ); ?></span>
+            <div class="tfs-button-wrapper">
+            <a class="tfs-detail__subscribe-button button-subscribe w-button" href="<?php  echo get_field('subscribe'); ?>">Subscribe to this newsletter</a>
+            <a class="tfs-detail__example-button w-button" href="<?php  echo get_field('example'); ?>">See an example first</a>
+            <a class="tfs-detail__frequency-button w-button" href="<?php  echo get_field('example'); ?>">Weekly</a>
+            </div>
         </div>
 </div>
 </div>
@@ -53,7 +55,7 @@ function tfs_custom_loop() { ?>
 		));
 
 if ($related_newsletters) {
-        echo '<h3>Related '.$this_category[0]->name.' newsletters</h3>';
+        echo '<div class="tfs-related-grid__tile-header"><h3>Related '.$this_category[0]->name.' newsletters</h3></div>';
             echo '<div class="tfs-related-grid alignwide" role="list">';
 
         while ($related_newsletters->have_posts()):$related_newsletters->the_post();
