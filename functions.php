@@ -253,3 +253,8 @@ function custom_toolbar_link($wp_admin_bar) {
     $wp_admin_bar->add_node($args);
 }
 add_action('admin_bar_menu', 'custom_toolbar_link', 999);
+
+function custom_search_button_text( $text ) {
+	return ( 'Get your favorite newsletter!');
+	}
+	add_filter( 'genesis_search_text', 'custom_search_button_text' );
