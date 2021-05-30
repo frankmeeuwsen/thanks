@@ -21,8 +21,11 @@ function tfs_custom_loop() { ?>
             ?>
         <div class="tfs-detail__image-wrapper">
             <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://picsum.photos/600/400?nocache='.microtime(); ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
-        </div>
-        <div class="tfs-detail__avatar"><img src="<?php  echo get_field('logo_lokaal'); ?>" width="32" height="32" class="tfs-detail__logo"></div>
+        </div><?php 
+        if(get_field('logo_lokaal')){
+       echo '<div class="tfs-detail__avatar"><img src="'.get_field('logo_lokaal').'" width="32" height="32" class="tfs-detail__logo"></div>';
+        }
+     ?>
         <div class="tfs-detail__content-wrapper">
             <div class="tfs-detail__category-block"><?php echo $category_name; ?></div>
             <h2><?php  echo get_the_title(); ?> </h2>
