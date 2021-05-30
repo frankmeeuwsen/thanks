@@ -238,3 +238,18 @@ function replace_tags_with_custom_taxonomy( $post_data, $form ) {
     // Return modified post data with the custom taxonomy terms added.
     return $post_data;
 }
+
+// add a link to the WP Toolbar
+function custom_toolbar_link($wp_admin_bar) {
+    $args = array(
+        'id' => 'tfsdraft',
+        'title' => 'Drafts', 
+        'href' => 'edit.php?post_status=draft&post_type=newsletter', 
+        'meta' => array(
+            'class' => 'wpbeginner', 
+            'title' => 'Admin drafts of newsletters'
+            )
+    );
+    $wp_admin_bar->add_node($args);
+}
+add_action('admin_bar_menu', 'custom_toolbar_link', 999);
