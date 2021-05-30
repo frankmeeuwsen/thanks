@@ -17,10 +17,16 @@ function tfs_category_loop() {
 
 	if ( have_posts() ) : 
     
-            echo '<div class="alignwide"><h3>The best '.strtolower(single_cat_title( '', false )).' newsletters</h3>';
+			echo '<div class="tfs-related-grid__tile-header">
+            			<h3>The best '.strtolower(single_cat_title( '', false )).' newsletters</h3>
+                        </div>';
             if ( category_description() ) :
                 echo category_description( get_category_by_slug( 'category-slug' )->term_id ) ;
             endif;
+					echo '<div class="tfs-related-grid alignwide" role="list">';
+
+
+
             echo '</div><div class="tfs-related-grid alignwide" role="list">';
 
         while ( have_posts() ) : the_post(); 

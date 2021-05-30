@@ -525,9 +525,9 @@ textarea {
   width: 100%;
   padding: 20px;
   border: 1px solid #ddd;
-  color: #9CA3AF;
+  color: #1F2937;
   background-color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 300;
   border-radius: 0;
 }
@@ -1540,7 +1540,8 @@ img.alignright,
 }
 .site-header .genesis-nav-menu li a {
   color: #fff;
-  font-size: 16px;
+  font-size: 1.8rem;
+  font-weight: 600;
   padding: 10px;
 }
 .site-header .genesis-nav-menu li li {
@@ -2576,7 +2577,7 @@ li.comment {
   margin: 10px;
   border: 0 #000;
   border-radius: 3px;
-  background-color: #E5E7EB;
+  background-color: #F3F4F6;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.09);
   -webkit-transition: box-shadow 0.2s, -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in, box-shadow 0.2s, -webkit-transform 0.2s ease-in;
@@ -2593,7 +2594,7 @@ li.comment {
   margin: 10px;
   border: 0 #000;
   border-radius: 3px;
-  background-color: #E5E7EB;
+  background-color: #F3F4F6;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.09);
   -webkit-transition: box-shadow 0.2s, -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in, box-shadow 0.2s, -webkit-transform 0.2s ease-in;
@@ -2729,14 +2730,15 @@ li.comment {
   margin-bottom: 14px;
   color: #fff;
   font-size: 50px;
+  font-weight: 600;
   line-height: 51px;
   letter-spacing: 2px;
 }
 
 .tfs_hero_subheading {
-  color: rgba(255, 255, 255, 0.63);
-  font-size: 18px;
-  font-weight: 300;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .tfs_twitter {
@@ -2785,7 +2787,7 @@ max-width: 480 px
 .footer-widgets-2,
 .home-middle-3,
 .site-header .widget-area {
-    width: 740px;
+    width: 680px;
   }
 
   .sidebar-content-sidebar .content,
@@ -2828,7 +2830,7 @@ max-width: 480 px
 .footer-widgets-2,
 .home-middle-3,
 .site-header .widget-area {
-    width: 620px;
+    width: 510px;
   }
 
   .sidebar-content-sidebar .content,
@@ -2997,6 +2999,11 @@ max-width: 480 px
 
   .genesis-nav-menu.responsive-menu {
     display: none;
+  }
+
+  .title-area {
+    max-width: 80%;
+    padding: 10px 5%;
   }
 
   .genesis-nav-menu.responsive-menu .menu-item,
@@ -3245,11 +3252,7 @@ max-width: 480 px
   }
 
   .tfs-related-grid__tile {
-    margin: 3px;
-  }
-
-  .tfs_hero_subheading {
-    padding: 0 10px;
+    margin: 10px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -3266,6 +3269,18 @@ max-width: 480 px
 .home-middle-3 .featured-listings .listing {
     margin: 0 0 6px;
     width: 100%;
+  }
+
+  .tfs_hero_subheading {
+    padding: 0 10px;
+  }
+
+  .tfs_hero_section {
+    display: none;
+  }
+
+  .site-title {
+    font-size: 2.4rem;
   }
 }
 
