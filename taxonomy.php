@@ -6,6 +6,24 @@ add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_c
 remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
 add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_taxonomy_title_description' );
 
+add_action( 'genesis_after_header', 'tfs_subheader',1 );
+function tfs_subheader(){?>
+
+	<div class="tfs_hero_section">
+		<div class="tfs_hero_wrapper">		
+			<div class="tfs_hero_heading"> <?php strtolower(single_cat_title("The best " )) ?> newsletters
+			</div>
+			<div class="tfs_hero_subheading">
+			<?php
+			 if ( have_posts() && category_description() ) :
+                echo category_description( get_category_by_slug( 'category-slug' )->term_id ) ;
+            endif; ?>				
+			</div>
+		</div>
+	</div>
+<?php
+}
+
 // Remove the standard loop.
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
@@ -17,12 +35,12 @@ function tfs_category_loop() {
 
 	if ( have_posts() ) : 
     
-			echo '<div class="tfs-related-grid__tile-header">
-            			<h3>The best '.strtolower(single_cat_title( '', false )).' newsletters</h3>
-                        </div>';
-            if ( category_description() ) :
-                echo category_description( get_category_by_slug( 'category-slug' )->term_id ) ;
-            endif;
+			// echo '<div class="tfs-related-grid__tile-header">
+            // 			<h3>The best '.strtolower(single_cat_title( '', false )).' newsletters</h3>
+            //             </div>';
+            // if ( category_description() ) :
+            //     echo category_description( get_category_by_slug( 'category-slug' )->term_id ) ;
+            // endif;
 					echo '<div class="tfs-related-grid alignwide" role="list">';
 
 
