@@ -1,11 +1,11 @@
 <?php
 /**
- * AgentPress Pro.
+ * Thanks for Subscribing.
  *
- * This file adds the front page to the AgentPress Pro Theme.
+ * This file adds the front page to the TFS Theme.
  *
  * @package AgentPress
- * @author  StudioPress
+ * @author  Frank Meeuwsen
  * @license GPL-2.0+
  * @link    http://my.studiopress.com/themes/agencypress/
  */
@@ -18,7 +18,7 @@ function agentpress_front_page_enqueue_scripts() {
 
 }
 
-add_action( 'genesis_meta', 'agentpress_home_genesis_meta' );
+// add_action( 'genesis_meta', 'agentpress_home_genesis_meta' );
 /**
  * Add widget support for homepage. If no widgets active, display the default loop.
  *
@@ -34,15 +34,15 @@ if ( is_active_sidebar( 'home-featured' ) || is_active_sidebar( 'home-top' ) || 
 	remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs' );
 
 	// Add home featured area.
-	add_action( 'genesis_after_header', 'agentpress_home_featured_widget' );
-	add_action( 'genesis_after_header', 'tfs_category_listing',2 );
-	add_action( 'genesis_after_header', 'tfs_subheader',1 );
+	// add_action( 'genesis_after_header', 'tfs_subheader',1 );
 	// Add home widget area.
 	add_action( 'genesis_before_footer', 'agentpress_home_widgets', 1 );
 
 }
 }
-
+add_action( 'genesis_after_header', 'agentpress_home_featured_widget' );
+add_action( 'genesis_after_header', 'tfs_category_listing',2 );
+	
 function tfs_subheader(){?>
 	<div class="tfs_hero_section">
 		<div class="tfs_hero_wrapper">		

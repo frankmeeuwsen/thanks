@@ -1,5 +1,5 @@
 .vscode/settings.json
-style.scss
-partials/*.*
-*.scss
+# style.scss
+# partials/*.*
+# *.scss
 style-*.css

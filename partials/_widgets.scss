@@ -1,0 +1,83 @@
+/* Widgets
+------------------------------------------------------------ */
+
+.widget {
+	margin-bottom: 40px;
+	overflow: hidden;
+	word-wrap: break-word;
+
+	p:last-child,
+	ul > li:last-of-type {
+		margin-bottom: 0;
+	}
+
+	ul > li {
+		margin-bottom: 10px;
+	}
+
+	ul > li:last-of-type {
+		padding-bottom: 0;
+	}
+
+	ol > li {
+		padding-left: 20px;
+		text-indent: -20px;
+		list-style-position: inside;
+		list-style-type: decimal;
+	}
+
+	li li {
+		margin: 0 0 0 30px;
+		padding: 0;
+		border: 0;
+	}
+}
+
+.widget_calendar {
+
+	table {
+		width: 100%;
+	}
+
+	td,
+	th {
+		text-align: center;
+	}
+}
+
+/* Featured Content
+--------------------------------------------- */
+
+.featured-content {
+
+	.entry {
+		background: none;
+		box-shadow: none;
+		margin-bottom: 40px;
+		padding: 0;
+	}
+
+	.entry p:last-child {
+		margin-bottom: 0;
+	}
+
+	.entry-image {
+		width: 75px;
+		height: 75px;
+	}
+
+	.entry-title {
+		font-size: $featured-content__entry-title--font-size;
+		font-weight: $font-weight--bold;
+
+	}
+}
+
+.agentpress-pro-home .featured-content article~.widget-title,
+.agentpress-pro-home .featured-content article~ul {
+	clear: both;
+}
+
+.full-width .featured-content .entry {
+	background-color: #fff;
+}

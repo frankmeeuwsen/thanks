@@ -1,0 +1,131 @@
+/* Plugins
+--------------------------------------------- */
+
+/* AgentPress Listings
+--------------------------------------------- */
+
+.widget-area .widget.property-search {
+	background-color: #1a212b;
+	padding: 40px;
+}
+
+.property-search form {
+	text-align: center;
+}
+
+.property-search select {
+	-webkit-appearance: none;
+	margin-bottom: 16px;
+}
+
+.property-search input[type="submit"] {
+	width: 100%;
+}
+
+.featured-listings .listing {
+	color: #1a212b;
+	margin: 0 auto;
+	max-width: 500px;
+	overflow: hidden;
+	padding: 0 0 40px;
+	position: relative;
+	text-align: center;
+}
+
+.listing .listing-address,
+.listing .listing-city-state-zip,
+.listing .more-link {
+	display: block;
+}
+
+.listing-text {
+	background-color: #d23836;
+	color: #fff;
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding: 6px 12px;
+	position: absolute;
+	right: -40px;
+	text-align: center;
+	text-transform: uppercase;
+	top: 30px;
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	width: 160px;
+}
+
+.listing-price {
+	background-color: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	display: inline-block;
+	font-family: 'Lato', sans-serif;
+	font-size: 24px;
+	margin: -30px auto 12px;
+	padding: 12px 32px;
+}
+
+.featured-listings .listing a.more-link {
+	color: #d23836;
+}
+
+.featured-listings .listing a.more-link:hover {
+	color: #1a212b;
+}
+
+.property-details {
+	margin-bottom: 28px;
+}
+
+
+/* Genesis eNews Extended
+--------------------------------------------- */
+
+.enews {
+
+	form + p {
+		margin-top: 24px;
+	}
+
+	.after-entry & {
+		padding: 10px;
+		text-align: center;
+
+	}
+
+	.sidebar & {
+		padding: 30px;
+		background-color: $enews__sidebar--background-color;
+	}
+}
+
+.enews-widget {
+
+	input {
+		margin-bottom: 10px;
+		font-size: $enews-widget__input--font-size;
+	}
+
+	input[type="submit"] {
+		width: 100%;
+		margin: 0;
+	}
+
+	.after-entry & input {
+		text-align: center;
+	}
+
+}
+.enews form+p {
+	margin-top: 24px;
+}
+
+
+/* Jetpack
+--------------------------------------------- */
+
+#wpstats {
+	display: none;
+}

@@ -1,0 +1,308 @@
+/* Thanks for Subscribing
+---------------------------------------------------------------------------------------------------- */
+
+.tfs-detail__wrapper{
+display: block;
+// width: 640px;
+max-width: 600px;
+margin: auto auto 50px;
+// padding: 20px;
+border-radius: 5px;
+background-color: $tfs-detail-wrapper--background-color;
+box-shadow: 0 0 $box-shadow-blur-radius rgba(0, 0, 0, $box-shadow-opacity);
+}
+
+.tfs-detail__image-wrapper{
+position: static;
+max-width: 600px;
+float: none;
+clear: none;
+}
+
+.tfs-detail__category-wrapper{
+padding-left: 35px;
+}
+
+.tfs-detail__category-block{
+		position: relative;
+		left: 0;
+		top: auto;
+		z-index: auto;
+		display: inline-block;
+		margin-top: 6px;
+		margin-right: 6px;
+		margin-left: 0;
+		padding: 6px;
+		float: none;
+		clear: none;
+		border-radius: 3px;
+		background-color: $tfs-category-button--background-color;
+		color: #fff;
+		font-size: 14px;
+}
+
+.tfs-detail__content-wrapper{
+ position: relative;
+ max-width: 600px;
+ background-color: $tfs-detail__content-wrapper--background-color;
+ padding:5px;
+}
+
+.tfs-related-grid{
+    display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+
+
+}
+
+.tfs-detail__subscribe-button{
+	display: inline;
+	padding: 9px 15px;
+	background-color: #ec3838;
+	color: #fff;
+	border: 0;
+	line-height: inherit;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.tfs-detail__example-button{
+	display: inline;
+	padding: 9px 15px;
+	background-color: #3898ec;
+	color: #fff;
+	border: 0;
+	line-height: inherit;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.tfs-detail__frequency-button{
+	display: inline;
+	clear: none;
+	border: 1px solid #000;
+	border-radius: 12px;
+	background-color: transparent;
+	color: #2e80b6;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: none;
+	white-space: normal;
+	padding: 9px 15px;
+	margin-bottom: 5px;
+}
+
+.tfs-related-grid__tile	{
+	/* display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	align-content: flex-start; */
+	width: 300px;
+	overflow: hidden;
+	margin: 10px;
+	border: 0 #000;
+	border-radius: 3px;
+	background-color: $tfs-tile--background-color;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, .09);
+	-webkit-transition: box-shadow .2s,
+	-webkit-transform .2s ease-in;
+	transition: transform .2s ease-in,
+	box-shadow .2s,
+	-webkit-transform .2s ease-in;
+	text-decoration: none;
+}
+.tfs-related-grid__tile-header {
+	/* display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	align-content: flex-start; */
+	max-width: 600px;
+	overflow: hidden;
+	margin: 10px;
+	border: 0 #000;
+	border-radius: 3px;
+	background-color: $tfs-tile--background-color;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, .09);
+	-webkit-transition: box-shadow .2s,
+		-webkit-transform .2s ease-in;
+	transition: transform .2s ease-in,
+		box-shadow .2s,
+		-webkit-transform .2s ease-in;
+	text-decoration: none;
+}
+
+.tfs-related-grid__image {
+	/* display: flex;
+	flex-shrink: 0;
+	align-items: flex-start; */
+	border-radius: 14px;
+	
+}
+
+.tfs-related-grid__avatar,
+.tfs-detail__avatar {
+position: relative;
+float: right;
+top: -16px;
+left:-16px;
+z-index: 9;
+}
+
+.tfs-related__content{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 64px;
+	display: -webkit-box;
+	/* line-height: 16px; */
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	padding: 0 10px 3px;
+	;
+}
+
+.tfs-related-grid__logo,
+.tfs-detail__logo{
+border-radius: 32px;
+background-color: $white;
+}
+
+.tfs-related-grid__tile-content {
+	position: relative;
+	margin-bottom: auto;
+	padding-right: 10px;
+	// padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+.tfs-related-grid__more {
+	/* display: flex; */
+	background-color: #ccbcc0;
+	color: #fff1ec;
+	font-size: 10px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	margin-top: auto;
+	font-family: sans-serif;
+	text-decoration: none;
+}
+
+	.category-list-wrapper-frontpage {
+		display: block;
+		padding: 30px;
+		/* margin: 0 180px; */
+		clear: none;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-box-align: start;
+		-webkit-align-items: flex-start;
+		-ms-flex-align: start;
+		align-items: flex-start;
+		-webkit-align-content: flex-start;
+		-ms-flex-line-pack: start;
+		align-content: flex-start;
+		text-align: left;
+	}
+
+
+.category-listing-wrap{
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+}
+
+
+.category_listing{
+	position: relative;
+	margin-right: 0;
+	margin-left: 0;
+	padding: 10px 0 0 10px;
+	float: left;
+	clear: none;
+	-o-object-fit: fill;
+	object-fit: fill;
+}
+
+.category_button{
+	border-radius: 30px;
+	font-size: $button--font-size;
+	background-color: $light-grey;
+	display: inline-block;
+	padding: 9px 15px;
+	color: $black;
+	border: 0;
+	line-height: inherit;
+	text-decoration: none;
+}
+
+.tfs_hero_section{
+	position: relative;
+	padding-top: 30px;
+	background-color: $site-header--background-color;
+	padding-bottom: 10px;
+}
+
+.tfs_hero_wrapper{
+	text-align: center;
+}
+
+.tfs_hero_heading{
+opacity: 1;
+transform: translateX(0px) translateY(0px) translateZ(0px);
+transition: opacity 600ms ease 0s,
+transform 600ms ease 0s;
+margin-bottom: 14px;
+color: #fff;
+font-size: 50px;
+font-weight: $font-weight--semibold;
+line-height: 51px;
+letter-spacing: 2px;
+}
+
+.tfs_hero_subheading{
+	color: $white;
+	font-size: $h3--font-size;
+	font-weight: 400;
+
+}
+
+.tfs_twitter{
+	color: #1DA1F2;
+}
+.tfs_twitter:hover{
+	color: #05619b;
+}
+
+.pagination-center{
+	display: flex;
+	justify-content: center;
+}
+
+.tfs-related-grid__tile-header {
+	background-color: $tfs-tile-header--background-color;
+	border-width:0px;
+	box-shadow: 0 0 0 0px;
+}
+
+.tfs-button-wrapper {
+	margin-bottom: 10px;
+}
+
+.tfs-open {
+	margin-top: -80px;
+}

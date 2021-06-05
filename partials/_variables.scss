@@ -1,0 +1,131 @@
+// Base Colors
+$black: #000;
+$white: #fff;
+$red: #d23836;
+$beige: #e9e9e9;
+$blue: #0073e5;
+$blue-bayoux:#49647b;
+$dark-grey: #1F2937;
+$mid-grey: #9CA3AF;
+$light-grey: #D1D5DB;
+$lighter-grey: #E5E7EB;
+$lightest-grey: #F3F4F6;
+
+// Base Fonts
+$base-font: 'Lato', sans-serif;
+
+// Screen widths, Media queries - WC widths in WC variables
+$standard-screen-width: 960px;
+
+// Border styles
+$border-width: 1px;
+$border-style: solid;
+$border-color: $mid-grey;
+
+// Box Shadow
+$box-shadow-blur-radius: 20px;
+$box-shadow-opacity: 0.05;
+
+// Font sizes
+$body--font-size: 1.6rem;
+$h1--font-size: 3rem;
+$h2--font-size: 2.4rem;
+$h3--font-size: 2rem;
+$h4--font-size: 1.8rem;
+$h5--font-size: 1.6rem;
+$h6--font-size: 1.4rem;
+$h1--mobile-font-size: 2.4rem;
+$button--font-size: 1.4rem;
+$archive-author-box__entry-title--font-size: 2rem;
+$breadcrumb--font-size: 1.6rem;
+$entry-title--font-size: 3.6rem;
+$featured-content__entry-title--font-size: 1.6rem;
+$enews-widget__input--font-size: 1.6rem;
+$site-title--font-size: 2.4rem;
+$genesis-nav-menu--font-size: 1.8rem;
+$genesis-nav-menu__sub-menu__link--font-size: 1.4rem;
+$sidebar--font-size: 1.6rem;
+$entry-content__caption--font-size: 1.4rem;
+$entry-meta--font-size: 1.6rem;
+$comments--font-size: 1.8rem;
+$footer-widgets--font-size: 1.8rem;
+$site-footer--font-size: 1.5rem;
+$forms--font-size: 1.5rem;
+$widget-title--font-size: 2rem;
+$archive-pagination--font-size: 1.6rem;
+$blockquote__before--font-size: 3rem;
+$after-entry__breadcrumb--font-size: 1.6rem;
+
+// Font families
+$body--font-family: $base-font;
+$headings--font-family: $base-font;
+
+// Font weights
+$font-weight--regular: 300;
+$font-weight--semibold: 600;
+$font-weight--bold: 700;
+
+// Line heights
+$line-height--big: 20px;
+$line-height--large: 1.75;
+$line-height--normal: 1.625;
+$line-height--medium: 1.5;
+$line-height--medium-small: 1.4;
+$line-height--small: 1.2;
+$line-height--smaller: 1;
+
+// Font colors
+$body--font-color: $dark-grey;
+$link--font-color: $red;
+$link--font-color-hover: $dark-grey;
+$button--font-color: $white;
+$button--font-color-hover: $beige;
+$entry-title__link--font-color: $dark-grey;
+$entry-title__link--font-color-hover: $red;
+$site-title__link--font-color: $dark-grey;
+$genesis-nav-menu--font-color: $dark-grey;
+$genesis-nav-menu--font-color-hover: $blue;
+$menu-toggle--font-color: $dark-grey;
+$menu-toggle--font-color-hover: $blue;
+$sub-menu-toggle--font-color: $dark-grey;
+$sub-menu-toggle--font-color-hover: $blue;
+$menu-highlight__link--font-color: $white;
+$sidebar__widget-title--font-color: $dark-grey;
+$forms--font-color: $dark-grey;
+$archive-pagination--font-color: $dark-grey;
+$archive-pagination--font-color-hover: $white;
+$gs-faq__question--font-color: $dark-grey;
+$gs-faq__question--font-color-hover: $blue;
+$disabled--font-color: $mid-grey;
+$breadcrumb--font-color: $white;
+$widget-title--font-color:$white;
+$site-header--font-color:$white;
+
+// Background colors
+$body--background-color: $lightest-grey;
+$site-header--background-color: $red;
+$mark--background-color: $light-grey;
+$button--background-color: $red;
+$button--background-color-hover: $blue;
+$breadcrumb--background-color: $red;
+$genesis-nav-menu__sub-menu__link--background-color: $white;
+$footer-widgets--background-color: $white;
+$menu-highlight__link--background-color: $dark-grey;
+$menu-highlight__link--background-color-hover: $blue;
+$forms__background-color: $white;
+$archive-description__background-color: $white;
+$author-box__background-color: $white;
+$sticky--background-color: $lightest-grey;
+$author-box--background-color: $lightest-grey;
+$code--background-color: $lightest-grey;
+$archive-pagination--background-color: $lightest-grey;
+$archive-pagination--background-color-hover: $dark-grey;
+$enews__sidebar--background-color: $lightest-grey;
+$disabled--background-color: $mid-grey;
+$widget-title--background-color:$red;
+$tfs-tile--background-color:$lightest-grey;
+$tfs-tile-header--background-color:$white;
+$tfs-detail-wrapper--background-color:$white;
+$tfs-detail__content-wrapper--background-color:$lighter-grey;
+$tfs-category-button--background-color:$blue-bayoux;
+$content--background-color:$white;

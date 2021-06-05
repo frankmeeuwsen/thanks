@@ -37,7 +37,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action( 'wp_enqueue_scripts', 'agentpress_google_fonts' );
 function agentpress_google_fonts() {
 
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,700|Roboto:700,300,400', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,600,700|Roboto:700,300,400', array(), CHILD_THEME_VERSION );
 
 }
 
@@ -73,14 +73,14 @@ add_theme_support( 'genesis-structural-wraps', array(
 ) );
 
 // Add support for additional color style options.
-add_theme_support( 'genesis-style-selector', array(
-	'agentpress-pro-blue'  => __( 'AgentPress Pro Blue', 'agentpress' ),
-	'agentpress-pro-gold'  => __( 'AgentPress Pro Gold', 'agentpress' ),
-	'agentpress-pro-green' => __( 'AgentPress Pro Green', 'agentpress' ),
-) );
+// add_theme_support( 'genesis-style-selector', array(
+// 	'agentpress-pro-blue'  => __( 'AgentPress Pro Blue', 'agentpress' ),
+// 	'agentpress-pro-gold'  => __( 'AgentPress Pro Gold', 'agentpress' ),
+// 	'agentpress-pro-green' => __( 'AgentPress Pro Green', 'agentpress' ),
+// ) );
 
 // Filter the property details array.
-add_filter( 'agentpress_property_details', 'agentpress_property_details_filter' );
+// add_filter( 'agentpress_property_details', 'agentpress_property_details_filter' );
 function agentpress_property_details_filter( $details ) {
 
 	$details['col1'] = array( 
@@ -104,7 +104,11 @@ function agentpress_property_details_filter( $details ) {
 }
 
 // Rename primary and secondary navigation menus.
-add_theme_support( 'genesis-menus' , array( 'primary' => __( 'Before Header Menu', 'agentpress' ), 'secondary' => __( 'Footer Menu', 'agentpress' ) ) );
+add_theme_support( 'genesis-menus' , array( 
+	'primary' => __( 'Before Header Menu', 'agentpress' ), 
+	'secondary' => __( 'Footer Menu', 'agentpress' ) 
+	)
+ );
 
 // Reposition the primary navigation.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
@@ -142,7 +146,7 @@ add_action( 'genesis_footer', 'agentpress_disclaimer' );
 }
 
 // Customize Listings.
-add_action( 'genesis_before', 'agentpress_listing_styles' );
+// add_action( 'genesis_before', 'agentpress_listing_styles' );
 function agentpress_listing_styles() {
 	if ( is_singular( 'listing' ) || is_post_type_archive( 'listing' ) ) {
 		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
@@ -165,8 +169,8 @@ function agentpress_default_image( $output, $args ) {
 	return $output;
 }
 
-// Add support for 2-column footer widgets.
-add_theme_support( 'genesis-footer-widgets', 2 );
+// Add support for 3-column footer widgets.
+add_theme_support( 'genesis-footer-widgets', 3 );
 
 // Add support for after entry widget.
 add_theme_support( 'genesis-after-entry-widget-area' );
@@ -255,6 +259,6 @@ function custom_toolbar_link($wp_admin_bar) {
 add_action('admin_bar_menu', 'custom_toolbar_link', 999);
 
 function custom_search_button_text( $text ) {
-	return ( 'Find your favorite newsletter!');
+	return ( 'Search...');
 	}
 	add_filter( 'genesis_search_text', 'custom_search_button_text' );
