@@ -46,7 +46,7 @@ add_action( 'wp_enqueue_scripts', 'agentpress_scripts' );
 function agentpress_scripts() {
 
 	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_script( 'agentpress-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'agentpress-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.1' );
 
 }
 
