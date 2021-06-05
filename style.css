@@ -2372,7 +2372,6 @@ li.comment {
 }
 
 .footer-widgets li {
-  border-bottom: 1px dotted #666;
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
@@ -2384,6 +2383,7 @@ li.comment {
 .footer-widgets-1 {
   float: left;
   width: calc(100% / 3);
+  margin-right: 25px;
 }
 
 .footer-widgets-2 {
