@@ -262,3 +262,34 @@ function custom_search_button_text( $text ) {
 	return ( 'Search...');
 	}
 	add_filter( 'genesis_search_text', 'custom_search_button_text' );
+// Enable the option show in rest
+add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
+
+// Enable the option edit in rest
+add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
+
+// Send an email when a submitted newsletter is published
+function send_emails_on_new_event(  $new_status, $old_status, $post ) {
+	$tfs_email = get_field('email_adres',$post->ID);
+	$tfs_title = get_the_title( $post->ID );
+	$tfs_link = get_permalink($post->ID);
+    $headers = 'From: Frank Meeuwsen <frank@thanksforsubscribing.app>';
+    // $title   = wp_strip_all_tags( get_the_title( $post->ID ) );
+    $message = 'Hi!
+
+I added your newsletter "'. $tfs_title . '" to the website Thanks for Subscribing at '. $tfs_link.'
+
+If you\'d like to have anything changed, feel free to reply to this mail. If you want another header or avatar, no problem, just send me new images. The avatar is 100 x 100 px and the header is 600 x 400 px. 
+
+Have a fine day and good luck with your newsletter,
+
+Frank Meeuwsen
+
+Thanks for Subscribing
+';
+
+    if ( ( 'publish' === $new_status && 'publish' !== $old_status ) && 'newsletter' === $post->post_type) {
+        wp_mail( $tfs_email, 'Your newsletter is added to Thanks for Subscribing', $message, $headers );
+    }
+}
+add_action( 'transition_post_status', 'send_emails_on_new_event', 10, 3 );
