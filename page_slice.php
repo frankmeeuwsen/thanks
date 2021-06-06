@@ -64,7 +64,7 @@ function tfs_homepage_loop() {
 			'meta_query' => array(
 				array(
 					'key' => 'slice_landingpage', // name of custom field
-					// 'value' => '1'
+					'value' => '1'
 					)
 			),
 
