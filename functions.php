@@ -25,7 +25,7 @@ require_once( get_stylesheet_directory() . '/lib/customize.php' );
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', __( 'AgentPress Pro', 'agentpress' ) );
 define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/agentpress/' );
-define( 'CHILD_THEME_VERSION', '3.1.15' );
+define( 'CHILD_THEME_VERSION', '3.1.16' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
