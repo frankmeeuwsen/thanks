@@ -37,8 +37,8 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_action( 'wp_enqueue_scripts', 'agentpress_google_fonts' );
 function agentpress_google_fonts() {
 
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&family=Signika', array(), CHILD_THEME_VERSION );
-	// wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,600,700|Roboto:700,300,400', array(), CHILD_THEME_VERSION );
+	// wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Signika', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,600,700|Roboto:700,300,400|Signika:700', array(), CHILD_THEME_VERSION );
 
 }
 

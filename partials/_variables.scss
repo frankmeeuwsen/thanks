@@ -12,8 +12,8 @@ $lighter-grey: #E5E7EB;
 $lightest-grey: #F3F4F6;
 
 // Base Fonts
-$base-font: 'Roboto Slab', sans-serif;
-$header-font: 'Signika';
+$base-font: 'Roboto', sans-serif;
+$header-font: 'Signika', sans-serif;
 
 // Screen widths, Media queries - WC widths in WC variables
 $standard-screen-width: 960px;
@@ -59,7 +59,7 @@ $after-entry__breadcrumb--font-size: 1.6rem;
 
 // Font families
 $body--font-family: $base-font;
-$headings--font-family: $base-font;
+$headings--font-family: $header-font;
 
 // Font weights
 $font-weight--regular: 300;
