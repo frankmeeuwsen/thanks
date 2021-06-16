@@ -38,10 +38,10 @@
 }
 
 .site-title {
-	font-family: $base-font;
+	font-family: $headings--font-family;
 	margin-bottom: 0;
 	font-size: $site-title--font-size;
-	// font-weight: $font-weight--semibold;
+	font-weight: $font-weight--bold;
 	line-height: $line-height--small;
 
 	a,
