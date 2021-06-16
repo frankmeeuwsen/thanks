@@ -291,5 +291,42 @@ Thanks for Subscribing
     if ( ( 'publish' === $new_status && 'publish' !== $old_status ) && 'newsletter' === $post->post_type) {
         wp_mail( $tfs_email, 'Your newsletter is added to Thanks for Subscribing', $message, $headers );
     }
+};
+
+function send_integromat_webhook($post){
+
+
+// $data = array( 'id' => $post->ID );
+// $encodedData = json_encode($data);
+// $response = wp_remote_post( 'https://enfcjuptyoeub.x.pipedream.net/', array( 'data' => $encodedData ) );
+
+
+$response = wp_remote_post( 'https://enfcjuptyoeub.x.pipedream.net/', array(
+    'method'      => 'POST',
+    'timeout'     => 45,
+    'redirection' => 5,
+    'httpversion' => '1.0',
+    'blocking'    => true,
+    'headers'     => array(),
+    'body'        => array(
+        'username' => 'bob',
+        'password' => '1234xyz'
+    ),
+    'cookies'     => array()
+    )
+);
+ 
+if ( is_wp_error( $response ) ) {
+    $error_message = $response->get_error_message();
+    echo "Something went wrong: $error_message";
+} else {
+    echo 'Response:<pre>';
+    print_r( $response );
+    echo '</pre>';
 }
+
+};
 add_action( 'transition_post_status', 'send_emails_on_new_event', 10, 3 );
+// add_action( 'transition_post_status', 'send_integromat_webhook', 10, 3 );
+add_action( 'transition_post_status', 'send_integromat_webhook', 20,1 );
+
