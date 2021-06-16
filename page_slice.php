@@ -57,7 +57,7 @@ function tfs_homepage_loop() {
 
 		$args =  array(
 			'post_type' => 'newsletter',
-			'posts_per_page' => 12,
+			'posts_per_page' => 30,
 			'post_status'=>'publish',
 			'orderby'=> 'date',
 			'order' => 'DESC',
