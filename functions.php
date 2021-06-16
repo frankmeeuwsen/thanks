@@ -25,7 +25,7 @@ require_once( get_stylesheet_directory() . '/lib/customize.php' );
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', __( 'AgentPress Pro', 'agentpress' ) );
 define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/agentpress/' );
-define( 'CHILD_THEME_VERSION', '3.1.18' );
+define( 'CHILD_THEME_VERSION', '3.1.19' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
@@ -39,7 +39,7 @@ function agentpress_google_fonts() {
 
 	// wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Signika', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,600,700|Roboto:700,300,400|Signika:700', array(), CHILD_THEME_VERSION );
-	
+
 
 }
 
