@@ -293,5 +293,30 @@ Thanks for Subscribing
     if ( ( 'publish' === $new_status && 'publish' !== $old_status ) && 'newsletter' === $post->post_type) {
         wp_mail( $tfs_email, 'Your newsletter is added to Thanks for Subscribing', $message, $headers );
     }
-}
+};
+
+function send_integromat_webhook($post){
+
+
+		// global $post;
+		// $tfs_id = get_the_ID( $post->ID );
+		// BugFu::log($post->ID);
+		$response = wp_remote_post( 'https://hook.integromat.com/nzfo0mdwgiercpnmlq89gbovfz5ce442', array(
+			'method'      => 'POST',
+			'timeout'     => 45,
+			'redirection' => 5,
+			'httpversion' => '1.0',
+			'blocking'    => true,
+			'headers'     => array(),
+			'body'        => array(
+				'id' => $post->ID
+		
+			),
+			'cookies'     => array()
+			)
+		);
+};
 add_action( 'transition_post_status', 'send_emails_on_new_event', 10, 3 );
+add_action( 'draft_to_publish', 'send_integromat_webhook', 10,1);
+
+
