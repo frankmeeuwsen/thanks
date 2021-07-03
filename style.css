@@ -336,7 +336,6 @@ textarea:focus,
 a {
   color: #d23836;
   text-decoration: none;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 a:focus,
@@ -1460,7 +1459,6 @@ img.alignright,
   border-radius: 10px;
 }
 .genesis-nav-menu > li.menu-item-has-children:hover > a {
-  background-color: #fff;
   color: #1a212b;
   border-radius: 10px;
   background-color: #fff;
@@ -1539,7 +1537,7 @@ img.alignright,
 }
 .site-header .genesis-nav-menu li a {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   padding: 10px;
 }
@@ -2731,8 +2729,8 @@ max-width: 480 px
 }
 @media only screen and (max-width: 768px) {
   body {
-    background-color: #fff;
-    font-size: 16px;
+    background-color: #F3F4F6;
+    font-size: 1.6rem;
   }
 
   .site-header .wrap,

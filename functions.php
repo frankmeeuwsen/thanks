@@ -25,7 +25,7 @@ require_once( get_stylesheet_directory() . '/lib/customize.php' );
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', __( 'AgentPress Pro', 'agentpress' ) );
 define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/agentpress/' );
-define( 'CHILD_THEME_VERSION', '3.1.19' );
+define( 'CHILD_THEME_VERSION', '3.1.20' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
@@ -319,4 +319,22 @@ function send_integromat_webhook($post){
 add_action( 'transition_post_status', 'send_emails_on_new_event', 10, 3 );
 add_action( 'draft_to_publish', 'send_integromat_webhook', 10,1);
 
+add_action('init','random_add_rewrite');
+function random_add_rewrite() {
+   global $wp;
+   $wp->add_query_var('really-random');
+   add_rewrite_rule('really-random', 'index.php?really-random=1', 'top');
+}
+
+add_action('template_redirect','random_template');
+function random_template() {
+   if (get_query_var('really-random') == 1) {
+           $posts = get_posts('post_type=newsletter&orderby=rand');
+           foreach($posts as $post) {
+                   $link = get_permalink($post);
+           }
+           wp_redirect($link,307);
+           exit;
+   }
+}
 
