@@ -306,3 +306,20 @@ letter-spacing: 2px;
 .tfs-open {
 	margin-top: -80px;
 }
+
+.tfs-highlight-button{
+	background-color: #1d3557;
+	color: #1a212b;
+	border-radius: 10px;
+	a {
+		color: #1a212b;
+		display: block;
+		padding: 10px;
+
+		&:hover {
+			background-color: #fff;
+			color: #1a212b;
+			border-radius: 10px;
+		}
+	}
+}

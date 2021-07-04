@@ -520,7 +520,7 @@ figure {
 input,
 select,
 textarea {
-  width: 320px;
+  width: 250px;
   min-height: 30px;
   border: 1px solid #ddd;
   color: #1F2937;
@@ -2503,6 +2503,22 @@ li.comment {
 
 .tfs-open {
   margin-top: -80px;
+}
+
+.tfs-highlight-button {
+  background-color: #1d3557;
+  color: #1a212b;
+  border-radius: 10px;
+}
+.tfs-highlight-button a {
+  color: #1a212b;
+  display: block;
+  padding: 10px;
+}
+.tfs-highlight-button a:hover {
+  background-color: #fff;
+  color: #1a212b;
+  border-radius: 10px;
 }
 
 /* Media Queries
