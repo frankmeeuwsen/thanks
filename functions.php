@@ -338,3 +338,12 @@ function random_template() {
    }
 }
 
+add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
+    if ( 'tfs-highlight-button' === $item->classes[0] ) {
+        // $atts['data-track-content'] ;
+		$atts['data-content-name']="Random click";
+		$atts['data-content-piece']="Random newsletter";
+    }
+
+    return $atts;
+}, 10, 3 );
