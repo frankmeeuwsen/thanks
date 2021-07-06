@@ -340,10 +340,19 @@ function random_template() {
 
 add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
     if ( 'tfs-highlight-button' === $item->classes[0] ) {
-        // $atts['data-track-content'] ;
-		$atts['data-content-name']="Random click";
-		$atts['data-content-piece']="Random newsletter";
+        $atts['data-track-content']='1' ;
+		$atts['data-content-name']='Random click';
+		$atts['data-content-piece']='Random newsletter';
+		$atts['class'] .= 'matomoTrackContent';
     }
 
     return $atts;
 }, 10, 3 );
+
+add_filter('walker_nav_menu_start_el', function($item_output, $item) {
+  if (in_array('tfs-highlight-button', $item->classes)) {
+    $item_output = str_replace('data-track-content="1"', 'data-track-content', $item_output);
+  }
+
+  return $item_output;
+}, 10, 2);
