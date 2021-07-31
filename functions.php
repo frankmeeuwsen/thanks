@@ -427,6 +427,11 @@ function tfs_gf_after_submission($entry, $form){
 add_action( 'gform_after_submission', 'tfs_check_substack', 11, 2 );
 
 function tfs_check_substack($entry,$form){
-				do_action( 'qm/debug', var_export($entry));
+$parent_post_id = get_post( $entry['post_id'] )->ID;
+$form_subscribeurl = $entry[5];
+$form_archiveurl = $entry[19];
 
+if (strpos($form_subscribeurl, 'substack') && empty($form_archiveurl)){
+			update_field('example', $form_subscribeurl.'/archive', $parent_post_id);
+	}
 }
