@@ -318,10 +318,8 @@ function send_integromat_webhook($post){
 			)
 		);
 };
-if ( 'production' == wp_get_environment_type() ) {
 	add_action( 'transition_post_status', 'send_emails_on_new_event', 10, 3 );
 	add_action( 'draft_to_publish', 'send_integromat_webhook', 10,1);
-}
 
 add_action('init','random_add_rewrite');
 function random_add_rewrite() {
