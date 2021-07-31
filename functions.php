@@ -400,14 +400,14 @@ function tfs_gf_after_submission($entry, $form){
 			// Generate the metadata for the attachment, and update the database record.
 			if ($attach_data = wp_generate_attachment_metadata($attach_id, $filepath)) {
 				wp_update_attachment_metadata($attach_id, $attach_data);
-			} else {
-				echo ' <
-					div id = "message"
-				class = "error" >
-					<
-					h1 > Failed to create Meta - Data < /h1> <
-					/div>
-				';
+			// } else {
+			// 	echo ' <
+			// 		div id = "message"
+			// 	class = "error" >
+			// 		<
+			// 		h1 > Failed to create Meta - Data < /h1> <
+			// 		/div>
+			// 	';
 			}
 
 	
@@ -421,5 +421,12 @@ function tfs_gf_after_submission($entry, $form){
 			// error_log(var_export($attach_id ,1));
 			// error_log(var_export($attach_data ,1));
 
+
+}
+
+add_action( 'gform_after_submission', 'tfs_check_substack', 11, 2 );
+
+function tfs_check_substack($entry,$form){
+				do_action( 'qm/debug', var_export($entry));
 
 }
