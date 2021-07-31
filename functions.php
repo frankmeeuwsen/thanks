@@ -316,8 +316,8 @@ function send_integromat_webhook($post){
 			)
 		);
 };
-add_action( 'transition_post_status', 'send_emails_on_new_event', 10, 3 );
-add_action( 'draft_to_publish', 'send_integromat_webhook', 10,1);
+// add_action( 'transition_post_status', 'send_emails_on_new_event', 10, 3 );
+// add_action( 'draft_to_publish', 'send_integromat_webhook', 10,1);
 
 add_action('init','random_add_rewrite');
 function random_add_rewrite() {
@@ -356,3 +356,131 @@ add_filter('walker_nav_menu_start_el', function($item_output, $item) {
 
   return $item_output;
 }, 10, 2);
+
+//  Gravity Forms fix. After upload, move image to library
+add_action( 'gform_after_submission', 'tfs_gf_after_submission', 10, 2 );
+
+function tfs_gf_after_submission($entry, $form){
+		error_log(var_export($entry,1));
+
+	    //getting post
+    $parent_post_id = get_post( $entry['post_id'] );
+	
+	$form_fileurl = $entry[15];
+			// Check the type of file. We'll use this as the 'post_mime_type'.
+			$filetype = wp_check_filetype(basename($form_fileurl), null);
+
+			// Get the path to the upload directory.
+			$wp_upload_dir = wp_upload_dir();
+
+			//Gravity forms often uses its own upload folder, so we're going to grab whatever location that is
+			$parts = explode('uploads/', $form_fileurl);
+			$filepath = $wp_upload_dir['basedir'].
+			'/'.$parts[1];
+			$fileurl = $wp_upload_dir['baseurl'].
+			'/'.$parts[1];
+
+
+			// Prepare an array of post data for the attachment.
+			$attachment = array(
+				'guid' => $fileurl,
+				'post_mime_type' => $filetype['type'],
+				'post_title' => preg_replace('/\.[^.]+$/', '', basename($fileurl)),
+				'post_content' => '',
+				'post_status' => 'inherit'
+			);
+
+
+			// Insert the attachment.
+			$attach_id = wp_insert_attachment($attachment, $filepath, $parent_post_id->ID);
+
+			//Image manipulations are usually an admin side function. Since Gravity Forms is a front of house solution, we need to include the image manipulations here.
+			require_once(ABSPATH.'wp-admin/includes/image.php');
+
+			// Generate the metadata for the attachment, and update the database record.
+			if ($attach_data = wp_generate_attachment_metadata($attach_id, $filepath)) {
+				wp_update_attachment_metadata($attach_id, $attach_data);
+			} else {
+				echo ' <
+					div id = "message"
+				class = "error" >
+					<
+					h1 > Failed to create Meta - Data < /h1> <
+					/div>
+				';
+			}
+
+	
+			wp_update_attachment_metadata($attach_id, $attach_data);
+			update_field('logo_lokaal', $attach_id, $parent_post_id->ID);
+			// update_post_meta($parent_post_id, 'logo', $attach_id);
+
+	error_log(var_export($parent_post_id,1));
+	error_log(var_export($parts ,1));
+	error_log(var_export($form_fileurl ,1));
+	error_log(var_export($attachment ,1));
+	error_log(var_export($attach_id ,1));
+	error_log(var_export($attach_data ,1));
+
+
+}
+
+// function iss_gf_after_submission($entry, $form) {
+// //Walk through the form fields and find any file upload fields
+// foreach($form['fields'] as $field) {
+// 	error_log(var_export($field, 1));
+// 	if ($field -> type == 'post_custom_field') {
+// 		//See if an image was submitted with this entry
+// 		if (isset($entry[$field -> id])) {
+// 			$fileurl = $entry[$field -> id];
+
+// 			// The ID of the post this attachment is for. Use 0 for unattached.
+// 			$parent_post_id = 0;
+
+// 			// Check the type of file. We'll use this as the 'post_mime_type'.
+// 			$filetype = wp_check_filetype(basename($fileurl), null);
+
+// 			// Get the path to the upload directory.
+// 			$wp_upload_dir = wp_upload_dir();
+
+// 			//Gravity forms often uses its own upload folder, so we're going to grab whatever location that is
+// 			$parts = explode('uploads/', $entry[$field -> id]);
+// 			$filepath = $wp_upload_dir['basedir'].
+// 			'/'.$parts[1];
+// 			$fileurl = $wp_upload_dir['baseurl'].
+// 			'/'.$parts[1];
+
+// 			// Prepare an array of post data for the attachment.
+// 			$attachment = array(
+// 				'guid' => $fileurl,
+// 				'post_mime_type' => $filetype['type'],
+// 				'post_title' => preg_replace('/\.[^.]+$/', '', basename($fileurl)),
+// 				'post_content' => '',
+// 				'post_status' => 'inherit'
+// 			);
+
+// 			// Insert the attachment.
+// 			$attach_id = wp_insert_attachment($attachment, $filepath, $parent_post_id);
+
+// 			//Image manipulations are usually an admin side function. Since Gravity Forms is a front of house solution, we need to include the image manipulations here.
+// 			require_once(ABSPATH.
+// 				'wp-admin/includes/image.php');
+
+// 			// Generate the metadata for the attachment, and update the database record.
+// 			if ($attach_data = wp_generate_attachment_metadata($attach_id, $filepath)) {
+// 				wp_update_attachment_metadata($attach_id, $attach_data);
+// 			} else {
+// 				echo ' <
+// 					div id = "message"
+// 				class = "error" >
+// 					<
+// 					h1 > Failed to create Meta - Data < /h1> <
+// 					/div>
+// 				';
+// 			}
+
+// 			wp_update_attachment_metadata($attach_id, $attach_data);
+// 		}
+// 	}
+// }
+// }
