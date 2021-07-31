@@ -25,7 +25,7 @@ require_once( get_stylesheet_directory() . '/lib/customize.php' );
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', __( 'AgentPress Pro', 'agentpress' ) );
 define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/agentpress/' );
-define( 'CHILD_THEME_VERSION', '3.1.21' );
+define( 'CHILD_THEME_VERSION', '3.1.22' );
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
@@ -415,14 +415,13 @@ function tfs_gf_after_submission($entry, $form){
 	
 			wp_update_attachment_metadata($attach_id, $attach_data);
 			update_field('logo_lokaal', $attach_id, $parent_post_id);
-			// update_post_meta($parent_post_id, 'logo', $attach_id);
-
-	// error_log(var_export($parent_post_id,1));
-	// error_log(var_export($parts ,1));
-	// error_log(var_export($form_fileurl ,1));
-	// error_log(var_export($attachment ,1));
-	// error_log(var_export($attach_id ,1));
-	// error_log(var_export($attach_data ,1));
+			// do_action( 'qm/debug', $parent_post_id );
+			// error_log(var_export($parent_post_id,1));
+			// error_log(var_export($parts ,1));
+			// error_log(var_export($form_fileurl ,1));
+			// error_log(var_export($attachment ,1));
+			// error_log(var_export($attach_id ,1));
+			// error_log(var_export($attach_data ,1));
 
 
 }
