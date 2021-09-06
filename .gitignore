@@ -3,3 +3,5 @@
 # partials/*.*
 # *.scss
 style-*.css
+.env
+.DS_Store
