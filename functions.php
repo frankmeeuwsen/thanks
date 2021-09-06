@@ -1,13 +1,14 @@
 <?php
+
 /**
  * AgentPress Pro.
  *
  * This file adds the functions to the AgentPress Pro Theme.
  *
- * @package AgentPress
- * @author  StudioPress
+ * @package Thanks for Subscribing
+ * @author  Frank Meeuwsen
  * @license GPL-2.0+
- * @link    http://my.studiopress.com/themes/agencypress/
+ * @link    https://thanksforsubscribing.app
  */
 
 // Start the engine.
