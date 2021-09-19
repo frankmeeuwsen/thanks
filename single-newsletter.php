@@ -20,7 +20,7 @@ function tfs_custom_loop() { ?>
             
             ?>
         <div class="tfs-detail__image-wrapper">
-            <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://picsum.photos/600/400?nocache='.microtime(); ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo get_the_content(); ?>" title="<?php echo get_the_content(); ?>">
+            <img src="<?php  echo get_the_post_thumbnail_url(get_the_id(),'large') ?: 'https://picsum.photos/600/400?nocache='.microtime(); ?>" width="600" height="400" class="tfs-imageblock" alt="<?php echo the_content(); ?>" title="<?php echo the_title(); ?>">
         </div><?php 
         if(get_field('logo_lokaal')){
        echo '<div class="tfs-detail__avatar"><img src="'.get_field('logo_lokaal').'" width="32" height="32" class="tfs-detail__logo"></div>';
@@ -28,14 +28,14 @@ function tfs_custom_loop() { ?>
      ?>
         <div class="tfs-detail__content-wrapper">
             <div class="tfs-detail__category-block"><?php echo $category_name; ?></div>
-            <h2><?php  echo get_the_title(); ?> </h2>
+            <h2><?php  echo the_title(); ?> </h2>
                         <?php 
                 if(get_field('twitter')){
                     echo '<a class="tfs_twitter" href="https://twitter.com/'.get_field('twitter').'"><span class="dashicons dashicons-twitter"></span></a>';
                 }  
             ?>
 
-            <p><?php  echo get_the_content(); ?></p>
+            <p><?php  echo the_content(); ?></p>
             <div class="tfs-button-wrapper">
             <a class="tfs-detail__subscribe-button button-subscribe w-button" href="<?php  echo get_field('subscribe'); ?>">Subscribe to this newsletter</a>
             <a class="tfs-detail__example-button w-button" href="<?php  echo get_field('example'); ?>">See an example first</a>
