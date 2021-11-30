@@ -12,7 +12,7 @@
         echo '<div class="tfs-related-grid__image">';
         // echo '<img src="'.get_the_post_thumbnail_url(get_the_id(),'tfs-header').'" width="300" height="200" class="tfs-imageblock">';
         ?>
-        <img src="<?php echo get_the_post_thumbnail_url(get_the_id(),'tfs-header') ?: 'https://picsum.photos/300/200?nocache='.microtime();?>" style='height: 100%; width: 100%; object-fit: contain'>
+        <img class="tfs-grid-image" src="<?php echo get_the_post_thumbnail_url(get_the_id(),'tfs-header') ?: 'https://picsum.photos/300/200?nocache='.microtime();?>">
         <?php
         echo '</div>';
         if(get_field('logo_lokaal')){

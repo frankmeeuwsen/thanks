@@ -2521,6 +2521,13 @@ li.comment {
   border-radius: 10px;
 }
 
+.tfs-grid-image {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 300px;
+  height: 200px;
+}
+
 /* Media Queries
 max-width: 1360 px
 max-width: 1180 px
