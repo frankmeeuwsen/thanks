@@ -2240,10 +2240,16 @@ li.comment {
 }
 
 .tfs-detail__image-wrapper {
-  position: static;
-  max-width: 600px;
-  float: none;
-  clear: none;
+  height: 400px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.tfs-imageblock {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .tfs-detail__category-wrapper {
