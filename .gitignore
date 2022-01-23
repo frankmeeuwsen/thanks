@@ -5,3 +5,4 @@
 style-*.css
 .env
 .DS_Store
+includes/Faker/
